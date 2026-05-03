@@ -1,0 +1,172 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision Tools Inc.</title>
+
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1581091870622-7c7f3c4d2b3b');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+       
+        .card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        
+        footer {
+            background: #222;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Precision Tools Inc.</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section id="home" class="hero">
+    <div class="container">
+        <h1>Welcome to Precision Tools Inc.</h1>
+        <p>High-quality manufacturing solutions for modern industries.</p>
+        <a href="#contact" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
+    </div>
+</section>
+
+
+<section id="team" class="py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Meet Our Team</h2>
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <img src="https://www.fedex.com/content/dam/fedex/us-united-states/about-us/images/2020/Q4/SMITH_john_circle_72495571.jpg">
+                    <div class="card-body">
+                        <h5>John Smith</h5>
+                        <p>CEO</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQFQRVLWz8EmgA/profile-displayphoto-shrink_200_200/B56ZTnFN8rHEAY-/0/1739043694695?e=2147483647&v=beta&t=aPtuv2YUk_AeUSsIxNAG4I086Cs65vplISWpKYffUj4">
+                    <div class="card-body">
+                        <h5>Sarah Lee</h5>
+                        <p>Production Manager</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <img src="https://www.colombotelegraph.com/wp-content/uploads/2021/07/Kumar-David.jpeg">
+                    <div class="card-body">
+                        <h5>David Kumar</h5>
+                        <p>Engineer</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="contact" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Contact Us</h2>
+
+        <form id="contactForm" class="col-md-6 mx-auto">
+
+            <div class="mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+
+            <div class="mb-3">
+                <textarea class="form-control" id="message" placeholder="Your Message"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Submit</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Precision Tools Inc.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+        alert("All fields are required!");
+        return;
+    }
+
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        alert("Enter a valid email!");
+        return;
+    }
+
+    alert("Form submitted successfully!");
+});
+</script>
+
+</body>
+</html>
